@@ -46,3 +46,13 @@ git checkout dev 切换分支
 git branch -d dev 删除 dev 分支
 git merge --no-ff -m "keep merge info" dev 合并dev版本到这个版本 # ff
 fast-forward 直接移动master指针到dev版本指针
+
+//rebase 分支冲突 慎用 rebase会直接改掉历史
+
+// stash 把当前的修改缓存起来
+git stash
+git stash pop  回复缓存
+
+//与github关联
+git remote add origin add origin <address>
+git push -u origin main
