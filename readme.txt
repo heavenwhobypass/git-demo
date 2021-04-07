@@ -17,12 +17,13 @@ git status -s  // -s表示缩写
 git add filename
 git add .
 
-//查看log
-git log
+//查看log  graph参数显示branch
+git log  --oneline  --graph
 
 //commit    staged -> unstaged.unodified
 git commit -m "notes..."
 git commit --amend --no-edit  补上东西，而且不改备注
+git commit -am "notes..." 直接add+commit
 
 //diff   比较上次commit的和这次修改过但没add的
 git diff
@@ -35,3 +36,13 @@ git reset --hard HEAD 回到最新的一个版本 HEAD^n 回到前n个版本 也
 git reflog
 
 // 单个文件的 版本
+git checkout <commitid> -- test.py
+
+// branch
+git branch dev 创建分支 叫 dev
+git checkput -b dev 创建分支 dev 并head指针移动到 dev上
+git branch 查看分支
+git checkout dev 切换分支
+git branch -d dev 删除 dev 分支
+git merge --no-ff -m "keep merge info" dev 合并dev版本到这个版本 # ff
+fast-forward 直接移动master指针到dev版本指针
